@@ -1,12 +1,43 @@
 package com.github.sindicat
 
+import java.lang.Exception
 import kotlin.math.pow
 import kotlin.math.roundToLong
 
 fun main(args: Array<String>) {
+    while (true) {
+        try {
+            val x: Double = getAngleValue()
+            val precision: Int = getPrecisionValue()
+            println("cos($x)=${cos(x, precision)}")
+        } catch (e: Exception) {
+            println(e.message)
+        }
+    }
 }
 
-fun cos(x: Double, precision: Int): Double {
+internal fun getPrecisionValue(): Int {
+    print("Enter precision (Integer value): ")
+    try {
+        return readLine()!!.toInt().also {
+            if (it > 308) throw IllegalArgumentException("Too large value for precision. Max precision 308 decimal places")
+            if (it < 0) throw IllegalArgumentException("Precision must be greater zero.")
+        }
+    } catch (e: NumberFormatException) {
+        throw IllegalArgumentException("Incorrect input. Please, enter Integer value.")
+    }
+}
+
+internal fun getAngleValue(): Double {
+    print("Enter the angle value in radians (Double value) X = ")
+    try {
+        return readLine()!!.toDouble()
+    } catch (e: NumberFormatException) {
+        throw IllegalArgumentException("Incorrect input. Please, enter Double value.")
+    }
+}
+
+internal fun cos(x: Double, precision: Int): Double {
     var angleInRadians = x % (2 * Math.PI)
     var currentElement = 1.0
     var sum = 0.0
