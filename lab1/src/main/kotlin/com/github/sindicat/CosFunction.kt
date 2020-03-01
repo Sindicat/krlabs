@@ -52,7 +52,7 @@ internal fun cos(x: Double, precision: Int): Double {
 private fun nextSequenceElement(i: Int, x: Double, prevElement: Double): Double =
     -1 * prevElement * ((x.pow(2.0)) / ((2 * i - 1) * 2 * i))
 
-private fun precisionIsChanging(sum: Double, precision: Int, nextElement: Double) =
+private fun precisionIsChanging(sum: Double, precision: Int, nextElement: Double): Boolean =
     sum.round(precision).compareTo((sum + nextElement).round(precision)) != 0
 
 fun Double.round(decimals: Int): Double {
