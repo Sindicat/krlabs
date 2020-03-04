@@ -1,4 +1,4 @@
-package com.github.sindicat
+package com.github.sindicat.lab1
 
 import java.lang.Exception
 import kotlin.math.pow
@@ -44,7 +44,8 @@ internal fun cos(x: Double, precision: Int): Double {
     var index = 1
     while (precisionIsChanging(sum, precision, currentElement)) {
         sum += currentElement
-        currentElement = nextSequenceElement(index++, angleInRadians, currentElement)
+        currentElement =
+            nextSequenceElement(index++, angleInRadians, currentElement)
     }
     return sum.round(precision)
 }
