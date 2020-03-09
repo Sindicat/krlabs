@@ -1,4 +1,4 @@
-package com.github.sindicat.lab2.oop
+package com.github.sindicat.lab2.oop.fratctal
 
 import com.github.sindicat.lab2.oop.img.impl.MegaRandomSnowFlake
 import java.awt.Color
@@ -7,27 +7,23 @@ import java.awt.Graphics2D
 import java.awt.geom.Point2D
 import java.awt.geom.Rectangle2D
 import java.awt.image.BufferedImage
-import java.util.*
 import javax.swing.JFrame
 import javax.swing.JPanel
 
 private const val WIDTH = 640
+
 private const val HEIGHT = 480
-private var image: BufferedImage = BufferedImage(
-    WIDTH,
-    HEIGHT, BufferedImage.TYPE_INT_RGB
-)
-private lateinit var graph: Graphics2D
 
 fun main(args: Array<String>) {
-    image = BufferedImage(
+    val image = BufferedImage(
         WIDTH,
         HEIGHT, BufferedImage.TYPE_INT_RGB
     )
-    graph = image.createGraphics()
+    val graph: Graphics2D = image.createGraphics()
     graph.color = Color.BLUE
     graph.fill(Rectangle2D.Double(0.0, 0.0, WIDTH.toDouble(), HEIGHT.toDouble()))
-    MegaRandomSnowFlake(Color.GREEN,
+    MegaRandomSnowFlake(
+        Color.GREEN,
         Color.ORANGE,
         Color.BLUE,
         graph,
