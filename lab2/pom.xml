@@ -74,7 +74,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.github.sindicat.lab2.functional.FunctionalStyleKochFractalKt</mainClass>
+                                    <mainClass>com.github.sindicat.lab2.oop.fratctal.FunctionalStyleKochFractal</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
