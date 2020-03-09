@@ -1,6 +1,6 @@
 package com.github.sindicat.lab2.oop.img.impl
 
-import com.github.sindicat.lab2.oop.img.DrawableElement
+import com.github.sindicat.lab2.oop.img.ColorElement
 import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.geom.Path2D
@@ -14,7 +14,7 @@ class RandomKochCurve(
     private val pInit: Point2D?,
     private val qInit: Point2D?,
     private val nInit: Int
-): DrawableElement(inColor, outColor, graph)  {
+): ColorElement(inColor, outColor, graph)  {
 
     companion object {
         val random = Random()

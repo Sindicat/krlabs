@@ -1,7 +1,7 @@
 package com.github.sindicat.lab2.oop.img.impl
 
 import com.github.sindicat.lab2.oop.color.ColorResolver
-import com.github.sindicat.lab2.oop.img.DrawableElement
+import com.github.sindicat.lab2.oop.img.ColorElement
 import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.geom.Point2D
@@ -16,7 +16,7 @@ class MegaRandomSnowFlake(
     private val m: Int,
     private val k: Int,
     private val n: Int
-) : DrawableElement(inColor, outColor, graph) {
+) : ColorElement(inColor, outColor, graph) {
 
     private val colorResolver: ColorResolver = ColorResolver()
 

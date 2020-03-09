@@ -1,6 +1,6 @@
 package com.github.sindicat.lab2.oop.img.impl
 
-import com.github.sindicat.lab2.oop.img.DrawableElement
+import com.github.sindicat.lab2.oop.img.ColorElement
 import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.geom.Path2D
@@ -17,7 +17,7 @@ open class RandomKochSnowflake(
     protected val m: Int,
     protected val n: Int
 
-) : DrawableElement(inColor, outColor, graph) {
+) : ColorElement(inColor, outColor, graph) {
 
     override fun draw() {
         val vs = arrayOfNulls<Point2D>(m)
