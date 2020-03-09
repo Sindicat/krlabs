@@ -17,10 +17,6 @@ class RandomKochCurve(
     private val nInit: Int
 ): ColorElement(inColor, outColor, graph)  {
 
-    companion object {
-        val random = Random()
-    }
-
     override fun draw() {
         drawRandomKochCurve(pInit, qInit, nInit)
     }
@@ -62,7 +58,11 @@ class RandomKochCurve(
         drawRandomKochCurve(t, q, n - 1)
     }
 
-    private fun randomSgn(): Int {
-        return random.nextInt(2) * 2 - 1
+    companion object Randomization {
+        val random = Random()
+
+        fun randomSgn(): Int {
+            return random.nextInt(2) * 2 - 1
+        }
     }
 }
