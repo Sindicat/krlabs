@@ -6,6 +6,7 @@ import java.awt.Graphics2D
 import java.awt.geom.Path2D
 import java.awt.geom.Point2D
 import java.util.*
+import kotlin.math.sqrt
 
 class RandomKochCurve(
     graph: Graphics2D,
@@ -32,9 +33,9 @@ class RandomKochCurve(
         )
         val s: Point2D = Point2D.Double(
             (p.x + q.x) / 2 -
-                    w * (p.y - q.y) * Math.sqrt(3.0) / 6,
+                    w * (p.y - q.y) * sqrt(3.0) / 6,
             (p.y + q.y) / 2 +
-                    w * (p.x - q.x) * Math.sqrt(3.0) / 6
+                    w * (p.x - q.x) * sqrt(3.0) / 6
         )
         val t: Point2D = Point2D.Double(
             (p.x + 2 * q.x) / 3,

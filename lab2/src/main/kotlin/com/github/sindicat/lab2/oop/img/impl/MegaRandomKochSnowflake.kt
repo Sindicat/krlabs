@@ -1,7 +1,6 @@
 package com.github.sindicat.lab2.oop.img.impl
 
 import com.github.sindicat.lab2.oop.color.ColorResolver
-import com.github.sindicat.lab2.oop.img.ColorElement
 import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.geom.Point2D
@@ -11,12 +10,12 @@ class MegaRandomKochSnowflake(
     private val endColor: Color,
     outColor: Color,
     graph: Graphics2D,
-    private val c: Point2D,
-    private val d: Double,
-    private val m: Int,
+    c: Point2D,
+    d: Double,
+    m: Int,
     private val k: Int,
-    private val n: Int
-) : ColorElement(inColor, outColor, graph) {
+    n: Int
+) : RandomKochSnowflake(inColor, outColor, graph, c, d, m, n) {
 
     private val colorResolver: ColorResolver = ColorResolver()
 
