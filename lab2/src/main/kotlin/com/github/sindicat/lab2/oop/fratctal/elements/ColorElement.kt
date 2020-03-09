@@ -1,4 +1,4 @@
-package com.github.sindicat.lab2.oop.img
+package com.github.sindicat.lab2.oop.fratctal.elements
 
 import java.awt.Color
 import java.awt.Graphics2D

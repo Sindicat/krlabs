@@ -1,6 +1,6 @@
-package com.github.sindicat.lab2.oop.img.impl
+package com.github.sindicat.lab2.oop.fratctal.elements.impl
 
-import com.github.sindicat.lab2.oop.img.ColorElement
+import com.github.sindicat.lab2.oop.fratctal.elements.ColorElement
 import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.geom.Path2D
@@ -12,8 +12,8 @@ class RandomKochCurve(
     graph: Graphics2D,
     inColor: Color,
     outColor: Color,
-    private val pInit: Point2D?,
-    private val qInit: Point2D?,
+    private val pInit: Point2D,
+    private val qInit: Point2D,
     private val nInit: Int
 ): ColorElement(inColor, outColor, graph)  {
 
@@ -25,10 +25,10 @@ class RandomKochCurve(
         drawRandomKochCurve(pInit, qInit, nInit)
     }
 
-    fun drawRandomKochCurve(p: Point2D?, q: Point2D?, n: Int) {
+    fun drawRandomKochCurve(p: Point2D, q: Point2D, n: Int) {
         val w = randomSgn()
         val r: Point2D = Point2D.Double(
-            (2 * p!!.x + q!!.x) / 3,
+            (2 * p.x + q.x) / 3,
             (2 * p.y + q.y) / 3
         )
         val s: Point2D = Point2D.Double(
@@ -56,7 +56,6 @@ class RandomKochCurve(
         if (n == 0) {
             return
         }
-
         drawRandomKochCurve(p, r, n - 1)
         drawRandomKochCurve(r, s, n - 1)
         drawRandomKochCurve(s, t, n - 1)

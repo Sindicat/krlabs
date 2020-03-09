@@ -1,6 +1,6 @@
-package com.github.sindicat.lab2.oop.img.impl
+package com.github.sindicat.lab2.oop.fratctal.elements.impl
 
-import com.github.sindicat.lab2.oop.img.ColorElement
+import com.github.sindicat.lab2.oop.fratctal.elements.ColorElement
 import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.geom.Path2D
@@ -36,7 +36,14 @@ open class RandomKochSnowflake(
         graph.color = inColor
         graph.fill(path)
         for (i in 0 until m) {
-            RandomKochCurve(graph, inColor, outColor, vs[(i + 1) % m], vs[i], n).draw()
+            RandomKochCurve(
+                graph,
+                inColor,
+                outColor,
+                vs[(i + 1) % m]!!,
+                vs[i]!!,
+                n
+            ).draw()
         }
     }
 

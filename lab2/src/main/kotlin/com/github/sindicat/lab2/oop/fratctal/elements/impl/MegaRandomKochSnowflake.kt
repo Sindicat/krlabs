@@ -1,4 +1,4 @@
-package com.github.sindicat.lab2.oop.img.impl
+package com.github.sindicat.lab2.oop.fratctal.elements.impl
 
 import com.github.sindicat.lab2.oop.color.ColorResolver
 import java.awt.Color
@@ -20,7 +20,15 @@ class MegaRandomKochSnowflake(
     private val colorResolver: ColorResolver = ColorResolver()
 
     override fun draw() {
-        RandomKochSnowflake(endColor, outColor, graph, c, d, m, n).draw()
+        RandomKochSnowflake(
+            endColor,
+            outColor,
+            graph,
+            c,
+            d,
+            m,
+            n
+        ).draw()
         for (i in 1 until k) {
             RandomKochSnowflake(
                 colorResolver.getBetweenColor(endColor, inColor, i.toDouble() / k),
