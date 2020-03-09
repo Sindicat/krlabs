@@ -6,7 +6,7 @@ import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.geom.Point2D
 
-class MegaRandomSnowFlake(
+class MegaRandomKochSnowflake(
     inColor: Color,
     private val endColor: Color,
     outColor: Color,

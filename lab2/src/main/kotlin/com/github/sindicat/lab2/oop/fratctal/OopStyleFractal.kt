@@ -1,6 +1,6 @@
 package com.github.sindicat.lab2.oop.fratctal
 
-import com.github.sindicat.lab2.oop.img.impl.MegaRandomSnowFlake
+import com.github.sindicat.lab2.oop.img.impl.MegaRandomKochSnowflake
 import java.awt.Color
 import java.awt.Graphics
 import java.awt.Graphics2D
@@ -22,7 +22,7 @@ fun main(args: Array<String>) {
     val graph: Graphics2D = image.createGraphics()
     graph.color = Color.BLUE
     graph.fill(Rectangle2D.Double(0.0, 0.0, WIDTH.toDouble(), HEIGHT.toDouble()))
-    MegaRandomSnowFlake(
+    MegaRandomKochSnowflake(
         Color.GREEN,
         Color.ORANGE,
         Color.BLUE,
