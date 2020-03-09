@@ -26,8 +26,6 @@ fun main(args: Array<String>) {
     graph = image.createGraphics()
     graph.color = Color.BLUE
     graph.fill(Rectangle2D.Double(0.0, 0.0, WIDTH.toDouble(), HEIGHT.toDouble()))
-    // drawRandomKochSnowflake(new Point2D.Double(WIDTH / 2, HEIGHT / 2),
-// WIDTH / 3, 4, 4, Color.GREEN, Color.BLUE);
     drawKochMegaSnowflake(
         Point2D.Double(
             (WIDTH / 2).toDouble(),
