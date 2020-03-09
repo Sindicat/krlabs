@@ -46,6 +46,4 @@ open class RandomKochSnowflake(
             ).draw()
         }
     }
-
-
 }
