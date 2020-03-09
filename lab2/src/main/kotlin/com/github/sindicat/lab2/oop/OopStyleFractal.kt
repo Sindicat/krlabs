@@ -1,6 +1,6 @@
 package com.github.sindicat.lab2.oop
 
-import com.github.sindicat.lab2.oop.img.impl.RandomKochSnowflake
+import com.github.sindicat.lab2.oop.img.impl.MegaRandomSnowFlake
 import java.awt.Color
 import java.awt.Graphics
 import java.awt.Graphics2D
@@ -18,7 +18,6 @@ private var image: BufferedImage = BufferedImage(
     HEIGHT, BufferedImage.TYPE_INT_RGB
 )
 private lateinit var graph: Graphics2D
-private val random = Random()
 
 fun main(args: Array<String>) {
     image = BufferedImage(
@@ -28,9 +27,10 @@ fun main(args: Array<String>) {
     graph = image.createGraphics()
     graph.color = Color.BLUE
     graph.fill(Rectangle2D.Double(0.0, 0.0, WIDTH.toDouble(), HEIGHT.toDouble()))
-    // drawRandomKochSnowflake(new Point2D.Double(WIDTH / 2, HEIGHT / 2),
-// WIDTH / 3, 4, 4, Color.GREEN, Color.BLUE);
-    drawKochMegaSnowflake(
+    MegaRandomSnowFlake(Color.GREEN,
+        Color.ORANGE,
+        Color.BLUE,
+        graph,
         Point2D.Double(
             (WIDTH / 2).toDouble(),
             (HEIGHT / 2).toDouble()
@@ -38,11 +38,8 @@ fun main(args: Array<String>) {
         WIDTH / 3.toDouble(),
         6,
         3,
-        4,
-        Color.GREEN,
-        Color.ORANGE,
-        Color.BLUE
-    )
+        4
+    ).draw()
     val frame = JFrame()
     frame.addNotify()
     frame.setSize(
@@ -61,44 +58,4 @@ fun main(args: Array<String>) {
         }
     })
     frame.isVisible = true
-}
-
-private fun randomSgn(): Int {
-    return random.nextInt(2) * 2 - 1
-}
-
-private fun getBetweenColor(
-    startColor: Color, endColor: Color, p: Double
-): Color {
-    return Color(
-        (startColor.red +
-                (endColor.red - startColor.red) * p).toInt(),
-        (startColor.green +
-                (endColor.green - startColor.green) * p).toInt(),
-        (startColor.blue +
-                (endColor.blue - startColor.blue) * p).toInt()
-    )
-}
-
-private fun drawKochMegaSnowflake(
-    c: Point2D, d: Double,
-    m: Int, k: Int, n: Int,
-    inColor: Color, endColor: Color, outColor: Color
-) {
-    RandomKochSnowflake(endColor, outColor, graph, c, d, m, n).draw()
-    for (i in 1 until k) {
-        RandomKochSnowflake(
-            getBetweenColor(endColor, inColor, i.toDouble() / k),
-            getBetweenColor(
-                endColor,
-                inColor,
-                (i - 1).toDouble() / k
-            ),
-            graph,
-            c,
-            d * (k - i) / k,
-            m,
-            n
-        ).draw()
-    }
 }
