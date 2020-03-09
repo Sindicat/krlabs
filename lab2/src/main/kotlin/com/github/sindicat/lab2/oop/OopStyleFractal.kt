@@ -102,28 +102,3 @@ private fun drawKochMegaSnowflake(
         ).draw()
     }
 }
-
-//private fun drawRandomKochSnowflake(
-//    c: Point2D, d: Double,
-//    m: Int, n: Int,
-//    inColor: Color, outColor: Color
-//) {
-//    val vs = arrayOfNulls<Point2D>(m)
-//    for (i in 0 until m) {
-//        vs[i] = Point2D.Double(
-//            c.x + d * Math.cos(2 * Math.PI / m * i),
-//            c.y - d * Math.sin(2 * Math.PI / m * i)
-//        )
-//    }
-//    val path: Path2D = Path2D.Double()
-//    path.moveTo(vs[0]!!.x, vs[0]!!.y)
-//    for (i in 0 until m) {
-//        path.lineTo(vs[(i + 1) % m]!!.x, vs[(i + 1) % m]!!.y)
-//    }
-//    path.closePath()
-//    graph.color = inColor
-//    graph!!.fill(path)
-//    for (i in 0 until m) {
-//        RandomKochCurve(graph, inColor, outColor, vs[(i + 1) % m], vs[i], n).draw()
-//    }
-//}
