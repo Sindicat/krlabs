@@ -1,7 +1,7 @@
 package com.github.sindicat.lab2.oop.fratctal
 
 import com.github.sindicat.lab2.oop.fratctal.elements.DrawableElement
-import com.github.sindicat.lab2.oop.fratctal.elements.impl.MegaRandomKochSnowflake
+import com.github.sindicat.lab2.oop.fratctal.elements.snowflake.MegaRandomKochSnowflake
 import java.awt.Color
 import java.awt.Graphics
 import java.awt.Graphics2D

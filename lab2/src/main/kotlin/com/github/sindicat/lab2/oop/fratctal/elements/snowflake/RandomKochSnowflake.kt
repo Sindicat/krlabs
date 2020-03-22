@@ -1,6 +1,7 @@
-package com.github.sindicat.lab2.oop.fratctal.elements.impl
+package com.github.sindicat.lab2.oop.fratctal.elements.snowflake
 
 import com.github.sindicat.lab2.oop.fratctal.elements.ColorElement
+import com.github.sindicat.lab2.oop.fratctal.elements.curve.RandomKochCurve
 import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.geom.Path2D

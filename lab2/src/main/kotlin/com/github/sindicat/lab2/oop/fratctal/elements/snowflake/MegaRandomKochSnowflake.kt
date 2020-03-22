@@ -1,4 +1,4 @@
-package com.github.sindicat.lab2.oop.fratctal.elements.impl
+package com.github.sindicat.lab2.oop.fratctal.elements.snowflake
 
 import java.awt.Color
 import java.awt.Graphics2D
@@ -28,7 +28,11 @@ class MegaRandomKochSnowflake(
         ).draw()
         for (i in 1 until k) {
             RandomKochSnowflake(
-                getBetweenColor(endColor, inColor, i.toDouble() / k),
+                getBetweenColor(
+                    endColor,
+                    inColor,
+                    i.toDouble() / k
+                ),
                 getBetweenColor(
                     endColor,
                     inColor,

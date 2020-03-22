@@ -1,6 +1,5 @@
-package com.github.sindicat.lab2.oop.fratctal.elements.impl
+package com.github.sindicat.lab2.oop.fratctal.elements.curve
 
-import com.github.sindicat.lab2.oop.fratctal.elements.ColorElement
 import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.geom.Path2D
@@ -15,14 +14,16 @@ class RandomKochCurve(
     private val pInit: Point2D,
     private val qInit: Point2D,
     private val nInit: Int
-): ColorElement(inColor, outColor, graph)  {
+): CountableAndColoredRandomKochCurve(graph, inColor, outColor) {
 
     override fun draw() {
         drawRandomKochCurve(pInit, qInit, nInit)
     }
 
     fun drawRandomKochCurve(p: Point2D, q: Point2D, n: Int) {
-        val w = randomSgn()
+        count()
+        val w =
+            randomSgn()
         val r: Point2D = Point2D.Double(
             (2 * p.x + q.x) / 3,
             (2 * p.y + q.y) / 3
@@ -59,6 +60,12 @@ class RandomKochCurve(
     }
 
     companion object Randomization {
+        var counter: Long = 0L
+
+        fun count() {
+            counter++
+            println(counter)
+        }
         val random = Random()
 
         fun randomSgn(): Int {
