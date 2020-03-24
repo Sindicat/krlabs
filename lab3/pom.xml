@@ -16,6 +16,7 @@
         <kotlin.code.style>official</kotlin.code.style>
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <mvn.version>3.1.0</mvn.version>
+        <netty.version>4.1.32.Final</netty.version>
     </properties>
 
     <dependencies>
@@ -35,6 +36,23 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <scope>test</scope>
             <version>${junit.jupiter.version}</version>
+        </dependency>
+
+        <!-- Netty -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-handler</artifactId>
+            <version>${netty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport</artifactId>
+            <version>${netty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec</artifactId>
+            <version>${netty.version}</version>
         </dependency>
     </dependencies>
 
