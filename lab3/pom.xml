@@ -54,6 +54,14 @@
             <artifactId>netty-codec</artifactId>
             <version>${netty.version}</version>
         </dependency>
+
+       <!-- Jackson-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
+            <version>2.10.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -92,7 +100,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.github.sindicat.lab3.Main</mainClass>
+                                    <mainClass>com.github.sindicat.lab3.client.ClientApplicationKt</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
