@@ -17,7 +17,6 @@ class Client(private val clientConfiguration: AppConfiguration) {
             val clientBootstrap: Bootstrap = Bootstrap()
                 .group(workerGroup)
                 .channel(NioSocketChannel::class.java)
-                .option(ChannelOption.SO_KEEPALIVE, true)
                 .handler(ClientChannelInitializer(clientConfiguration.name))
             val future = clientBootstrap
                 .connect(clientConfiguration.address)

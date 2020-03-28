@@ -20,7 +20,6 @@ class Server(private val serverConfiguration: AppConfiguration) {
                 .group(bossGroup, workerGroup)
                 .channel(NioServerSocketChannel::class.java)
                 .childHandler(ServerChannelInitializer(serverConfiguration.name))
-                .option(ChannelOption.SO_KEEPALIVE, true)
                 .localAddress(serverConfiguration.address)
             val future = serverBootstrap
                 .bind()
