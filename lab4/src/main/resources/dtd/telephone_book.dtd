@@ -1,0 +1,25 @@
+<!DOCTYPE directory PUBLIC "" [
+        <!-- Объявление возможных элементов -->
+
+        <!ELEMENT name EMPTY>
+        <!ELEMENT address EMPTY>
+        <!ELEMENT number EMPTY>
+
+        <!ELEMENT contact (name, address, number)>
+        <!ELEMENT records (contact*)>
+
+        <!-- Добавление атрибутов для элементов employee и office -->
+        <!ATTLIST name
+                first CDATA #REQUIRED
+                last  CDATA #IMPLIED
+                >
+        <!ATTLIST address
+                home CDATA #IMPLIED
+                work  CDATA #IMPLIED
+                >
+
+        <!ATTLIST number
+                home CDATA #IMPLIED
+                work  CDATA #IMPLIED
+                >
+        ]>
