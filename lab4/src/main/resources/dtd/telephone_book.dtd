@@ -1,4 +1,4 @@
-<!DOCTYPE directory PUBLIC "" [
+<!DOCTYPE directory [
         <!-- Объявление возможных элементов -->
 
         <!ELEMENT name EMPTY>
