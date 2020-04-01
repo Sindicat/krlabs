@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <records>
     <contact>
-        <name first="Rowan" last="Gill"/>
         <address home="London" work="New York"/>
+        <name first="Rowan" last="Gill"/>
         <number home="+1-532-521-23" work="+1-533-654-12"/>
     </contact>
     <contact>
-        <name first="Harley" last="Gibson"/>
         <address home="Denver" work="Denver"/>
+        <name first="Harley" last="Gibson"/>
         <number home="+1-331-521-77" work="+1-939-654-32"/>
     </contact>
     <contact>
-        <name first="Ashley" last="Evans"/>
         <address home="Waterville" work="Bedford"/>
+        <name first="Ashley" last="Evans"/>
         <number home="+1-831-521-10" work="+1-144-654-65"/>
     </contact>
 </records>

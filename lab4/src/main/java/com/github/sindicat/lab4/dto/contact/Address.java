@@ -2,6 +2,7 @@ package com.github.sindicat.lab4.dto.contact;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+import java.util.Objects;
 
 @XmlType(name = "address")
 public class Address {
@@ -34,5 +35,19 @@ public class Address {
 
     public void setWork(final String work) {
         this.work = work;
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final Address address = (Address) o;
+        return Objects.equals(home, address.home) &&
+                Objects.equals(work, address.work);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(home, work);
     }
 }

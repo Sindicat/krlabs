@@ -5,6 +5,7 @@ import com.github.sindicat.lab4.dto.contact.Name;
 import com.github.sindicat.lab4.dto.contact.Number;
 
 import javax.xml.bind.annotation.XmlType;
+import java.util.Objects;
 
 @XmlType(name = "contact")
 public class Contact {
@@ -47,5 +48,20 @@ public class Contact {
 
     public void setAddress(final Address address) {
         this.address = address;
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final Contact contact = (Contact) o;
+        return Objects.equals(name, contact.name) &&
+                Objects.equals(number, contact.number) &&
+                Objects.equals(address, contact.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, number, address);
     }
 }
