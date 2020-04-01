@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory:records xmlns:directory="https://github.com/Sindicat/krlabs/tree/master/lab4"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="https://github.com/Sindicat/krlabs/tree/master/lab4 https://raw.githubusercontent.com/Sindicat/krlabs/master/lab4/src/main/resources/xsd/telephone_book_scheme.xsd">
+    <contact>
+        <name first="Rowan" last="Gill"/>
+        <address home="London" work="New York"/>
+        <number home="+1-532-521-23" work="+1-533-654-12"/>
+    </contact>
+    <contact>
+        <name first="Harley" last="Gibson"/>
+        <address home="Denver" work="Denver"/>
+        <number home="+1-331-521-77" work="+1-939-654-32"/>
+    </contact>
+    <contact>
+        <name first="Ashley" last="Evans"/>
+        <address home="Waterville" work="Bedford"/>
+        <number home="+1-831-521-10" work="+1-144-654-65"/>
+    </contact>
+</directory:records>
