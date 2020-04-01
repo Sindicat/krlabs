@@ -20,7 +20,7 @@ class ServerChannelHandler(private val serverName: String) : ChannelDuplexHandle
         logReceivedMessage(msg)
         val responsePayload: String = msg.payload
             .replace(chainOfSpacesRegexp, NO_SPACE)
-            .toUpperCase()
+            .toLowerCase()
         val responseMsg = Message(sourceName = serverName, payload = responsePayload)
         logProcessedMessage(responseMsg)
         ctx.writeAndFlush(responseMsg)
