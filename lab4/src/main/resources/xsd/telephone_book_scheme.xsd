@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="https://github.com/Sindicat/krlabs/tree/master/lab4">
+    <element name="records">
+       <complexType>
+           <sequence>
+               <element name="name" maxOccurs="unbounded" minOccurs="0">
+                   <complexType>
+                       <attribute name="first" type="string" use="required"/>
+                       <attribute name="last" type="string" use="required"/>
+                   </complexType>
+               </element>
+               <element name="address" maxOccurs="unbounded" minOccurs="0">
+                   <complexType>
+                       <attribute name="home" type="string" use="required"/>
+                       <attribute name="work" type="string" use="required"/>
+                   </complexType>
+               </element>
+               <element name="number" maxOccurs="unbounded" minOccurs="0">
+                   <complexType>
+                       <attribute name="home" type="string" use="required"/>
+                       <attribute name="work" type="string" use="required"/>
+                   </complexType>
+               </element>
+           </sequence>
+       </complexType>
+    </element>
+</schema>

@@ -1,10 +1,9 @@
-<!DOCTYPE directory [
+<!DOCTYPE records [
         <!ELEMENT name EMPTY>
         <!ELEMENT address EMPTY>
         <!ELEMENT number EMPTY>
         <!ELEMENT contact (name, address, number)>
         <!ELEMENT records (contact*)>
-        <!ELEMENT directory (records*)>
 
         <!ATTLIST name
                 first CDATA #REQUIRED
