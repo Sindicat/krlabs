@@ -3,24 +3,30 @@
     <element name="records">
        <complexType>
            <sequence>
-               <element name="name" maxOccurs="unbounded" minOccurs="0">
-                   <complexType>
-                       <attribute name="first" type="string" use="required"/>
-                       <attribute name="last" type="string" use="required"/>
-                   </complexType>
-               </element>
-               <element name="address" maxOccurs="unbounded" minOccurs="0">
-                   <complexType>
-                       <attribute name="home" type="string" use="required"/>
-                       <attribute name="work" type="string" use="required"/>
-                   </complexType>
-               </element>
-               <element name="number" maxOccurs="unbounded" minOccurs="0">
-                   <complexType>
-                       <attribute name="home" type="string" use="required"/>
-                       <attribute name="work" type="string" use="required"/>
-                   </complexType>
-               </element>
+              <element name="contact">
+                  <complexType>
+                      <sequence>
+                          <element name="name" maxOccurs="unbounded" minOccurs="0">
+                              <complexType>
+                                  <attribute name="first" type="string" use="required"/>
+                                  <attribute name="last" type="string" use="required"/>
+                              </complexType>
+                          </element>
+                          <element name="address" maxOccurs="unbounded" minOccurs="0">
+                              <complexType>
+                                  <attribute name="home" type="string" use="required"/>
+                                  <attribute name="work" type="string" use="required"/>
+                              </complexType>
+                          </element>
+                          <element name="number" maxOccurs="unbounded" minOccurs="0">
+                              <complexType>
+                                  <attribute name="home" type="string" use="required"/>
+                                  <attribute name="work" type="string" use="required"/>
+                              </complexType>
+                          </element>
+                      </sequence>
+                  </complexType>
+              </element>
            </sequence>
        </complexType>
     </element>
