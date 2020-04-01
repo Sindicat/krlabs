@@ -6,7 +6,7 @@ import com.github.sindicat.lab3.utils.logReceivedMessage
 import io.netty.channel.ChannelDuplexHandler
 import io.netty.channel.ChannelHandlerContext
 
-private const val ONE_SPACE = " "
+private const val NO_SPACE = ""
 
 class ServerChannelHandler(private val serverName: String) : ChannelDuplexHandler() {
 
@@ -18,7 +18,9 @@ class ServerChannelHandler(private val serverName: String) : ChannelDuplexHandle
 
     private fun processIncomingMsg(ctx: ChannelHandlerContext, msg: Message) {
         logReceivedMessage(msg)
-        val responsePayload: String = msg.payload.replace(chainOfSpacesRegexp, ONE_SPACE)
+        val responsePayload: String = msg.payload
+            .replace(chainOfSpacesRegexp, NO_SPACE)
+            .toUpperCase()
         val responseMsg = Message(sourceName = serverName, payload = responsePayload)
         logProcessedMessage(responseMsg)
         ctx.writeAndFlush(responseMsg)
