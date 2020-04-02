@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<records>
+    <contact>
+        <address home="London" work="New York"/>
+        <name first="Rowan" last="Gill"/>
+        <number home="+1-532-521-23" work="+1-533-654-12"/>
+        <id>1</id>
+        <nextContactId>3</nextContactId>
+    </contact>
+    <contact>
+        <address home="Denver" work="Denver"/>
+        <name first="Harley" last="Gibson"/>
+        <number home="+1-331-521-77" work="+1-939-654-32"/>
+        <id>2</id>
+        <nextContactId>1</nextContactId>
+    </contact>
+    <contact>
+        <address home="Waterville" work="Bedford"/>
+        <name first="Ashley" last="Evans"/>
+        <number home="+1-831-521-10" work="+1-144-654-65"/>
+        <id>3</id>
+        <nextContactId/>
+    </contact>
+    <contact>
+        <address home="Paris" work="Paris"/>
+        <name first="Michel" last="Sardou"/>
+        <number home="+5-131-121-90" work="+5-247-034-99"/>
+        <id>4</id>
+        <nextContactId>3</nextContactId>
+    </contact>
+</records>
