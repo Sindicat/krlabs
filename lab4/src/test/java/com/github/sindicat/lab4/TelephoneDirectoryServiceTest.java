@@ -14,7 +14,7 @@ import java.util.List;
 public class TelephoneDirectoryServiceTest {
 
     @Test
-    public void findAllSubContacts() throws JAXBException {
+    public void findAllSubContactsTest() throws JAXBException {
         File file = new File("src/test/resources/data/contact_links_test.xml");
         JAXBContext jaxbContext = JAXBContext.newInstance(TelephoneDirectory.class);
 
