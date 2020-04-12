@@ -20,14 +20,14 @@ class ConverterController {
             @RequestParam(value = "outputMeasurement") outputMeasurement: String
     ): ConversionResult {
         val preProcessedInputValue = inputValue.replace(',','.')
-        val inputMeasure: MeterMeasurementAware = MeterMeasure.getMeterValueByName(inputMeasurement)
+        val inputMeasure: MeterMeasurementAware = MeterMeasure.getMeterValueByName(inputMeasurement)!!
         val outputMeasure: MeterMeasurementAware = EngMeasure.getMeterValueByName(outputMeasurement)
 
         val outputValue = countResult(BigDecimal(preProcessedInputValue), inputMeasure, outputMeasure)
         return ConversionResult(outputValue.toString())
     }
 
-    @GetMapping("/convert/to/meter")
+    @GetMapping("/convert/to/meterOrEng")
     fun convertToMeter(
             @RequestParam(value = "inputValue") inputValue: String,
             @RequestParam(value = "inputMeasurement") inputMeasurement: String,
@@ -35,7 +35,7 @@ class ConverterController {
     ): ConversionResult {
         val preProcessedInputValue = inputValue.replace(',','.')
         val inputMeasure: MeterMeasurementAware = EngMeasure.getMeterValueByName(inputMeasurement)
-        val outputMeasure: MeterMeasurementAware = MeterMeasure.getMeterValueByName(outputMeasurement)
+        val outputMeasure: MeterMeasurementAware = MeterMeasure.getMeterValueByName(outputMeasurement) ?: EngMeasure.getMeterValueByName(outputMeasurement)
 
         val outputValue = countResult(BigDecimal(preProcessedInputValue), inputMeasure, outputMeasure)
         return ConversionResult(outputValue.toString())

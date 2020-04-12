@@ -1,8 +1,6 @@
 <template>
     <div id="greeting" class="converter">
         <h3 class="headerStyle">Конвертер мер длины</h3>
-
-
         <div class="oneRaw">
             <div class="inputStyle">
                 <b-form-input type="number" placeholder="0,0" v-model="inputEng"/>
@@ -17,8 +15,8 @@
                 <b-form-input type="number" placeholder="0,0" v-model="outputMetr" disabled/>
             </div>
             <div class="dropdownStyle">
-                <vue-dropdown :config="configRightMetr"
-                              @setSelectedOption="configRightMetrFunction($event)"></vue-dropdown>
+                <vue-dropdown :config="configRightMetrAndEng"
+                              @setSelectedOption="configRightMetrAndEngFunction($event)"></vue-dropdown>
             </div>
         </div>
         <div class="oneRaw">
@@ -40,7 +38,6 @@
                               @setSelectedOption="configRightEngFunction($event)"></vue-dropdown>
             </div>
         </div>
-
         <div class="buttonStyle">
             <b-button v-on:click="convert" variant="primary">Конвертировать</b-button>
         </div>
@@ -158,7 +155,7 @@
                     hoverBackgroundColor: "gray",
                     border: "black"
                 },
-                configRightMetr: {
+                configRightMetrAndEng: {
                     placeholder: "метров",
                     options: [
                         {
@@ -172,6 +169,48 @@
                         },
                         {
                             value: "миллиметров"
+                        },
+                        {
+                            value: "лиг"
+                        },
+                        {
+                            value: "морских миль"
+                        },
+                        {
+                            value: "кабельтов"
+                        },
+                        {
+                            value: "фурлонгов"
+                        },
+                        {
+                            value: "чейнов"
+                        },
+                        {
+                            value: "родов"
+                        },
+                        {
+                            value: "ярдов"
+                        },
+                        {
+                            value: "футов"
+                        },
+                        {
+                            value: "хэндов"
+                        },
+                        {
+                            value: "барликорнов"
+                        },
+                        {
+                            value: "дюймов"
+                        },
+                        {
+                            value: "линий"
+                        },
+                        {
+                            value: "точек"
+                        },
+                        {
+                            value: "мил"
                         }
                     ],
                     backgroundColor: "gray",
@@ -208,8 +247,8 @@
             configLeftEngFunction(event) {
                 this.$data.configLeftEng.placeholder = event.value
             },
-            configRightMetrFunction(event) {
-                this.$data.configRightMetr.placeholder = event.value
+            configRightMetrAndEngFunction(event) {
+                this.$data.configRightMetrAndEng.placeholder = event.value
                 this.$data.outputMetr = "0,0"
             },
             configLeftMetrFunction(event) {
@@ -220,11 +259,11 @@
                 this.$data.outputEng = "0,0"
             },
             convert() {
-                axios.get('/convert/to/meter', {
+                axios.get('/convert/to/meterOrEng', {
                     params: {
                         inputValue: this.$data.inputEng,
                         inputMeasurement: this.$data.configLeftEng.placeholder,
-                        outputMeasurement: this.$data.configRightMetr.placeholder,
+                        outputMeasurement: this.$data.configRightMetrAndEng.placeholder,
                     }
                 }).then(response => {
                     this.$data.outputMetr = response.data.result;

@@ -14,6 +14,6 @@ enum class MeterMeasure(val value: String, override val meterValue: BigDecimal):
                 .map { it.value to it }
                 .toMap()
 
-        fun getMeterValueByName(name: String): MeterMeasure = METER_VALUE_BY_NAME[name] ?: error("Unknown enum name $name")
+        fun getMeterValueByName(name: String): MeterMeasure? = METER_VALUE_BY_NAME[name]
     }
 }
