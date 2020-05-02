@@ -1,11 +1,21 @@
 package com.github.sindicat.lab6_1.model
 
 import kotlin.math.pow
+import kotlin.math.sin
 
-class Rhombus(val diagonalA: Double?, val diagonalB: Double?) : Shape {
+class Rhombus(
+    val diagonalA: Double?,
+    val diagonalB: Double?,
+    val side: Double?,
+    val angle: Double?
+) : Shape {
 
     override fun getArea(): Double? {
-        return if (diagonalA != null && diagonalB != null) (diagonalA * diagonalB) / 2
+        return if(side != null && angle != null) {
+            side.pow(2) * sin(angle)
+        } else if (diagonalA != null && diagonalB != null) {
+            (diagonalA * diagonalB) / 2
+        }
         else null
     }
 

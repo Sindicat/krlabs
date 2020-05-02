@@ -23,12 +23,14 @@ class MasterView : View() {
     private val aSide: TextField by fxid()
     private val bSide: TextField by fxid()
     private val cSide: TextField by fxid()
+    private val angle: TextField by fxid()
     private val aSideLabel: Label by fxid()
     private val bSideLabel: Label by fxid()
     private val cSideLabel: Label by fxid()
     private val lengthLabel: Label by fxid()
     private val heightLabel: Label by fxid()
     private val infoLabel: Label by fxid()
+    private val angleLabel: Label by fxid()
 
     val shapeSelector: ChoiceBox<ShapeChoice> by fxid()
 
@@ -48,14 +50,26 @@ class MasterView : View() {
             when (newValue) {
                 ShapeChoice.TRIANGLE -> {
                     setVisibilityTriangleSpecificInputs(isVisible = true)
+                    aSideLabel.text = "Сторона А: "
+                    angleLabel.isVisible = true
+                    angle.isVisible = true
+                    angleLabel.text = "Угол между сторонами A и В: "
                     setNameForLabels("Основание: ", "Высота: ")
                 }
                 ShapeChoice.RECTANGLE -> {
                     setVisibilityTriangleSpecificInputs(isVisible = false)
+                    angleLabel.isVisible = false
+                    angle.isVisible = false
                     setNameForLabels("Длина: ", "Ширина: ")
                 }
                 ShapeChoice.RHOMBUS -> {
                     setVisibilityTriangleSpecificInputs(isVisible = false)
+                    aSide.isVisible = true
+                    aSideLabel.isVisible = true
+                    aSideLabel.text = "Сторона ромба: "
+                    angleLabel.isVisible = true
+                    angleLabel.text = "Угол между сторонами: "
+                    angle.isVisible = true
                     setNameForLabels("Первая диагональ: ", "Вторая диагональ: ")
                 }
             }
@@ -84,6 +98,7 @@ class MasterView : View() {
                 aSide = aSide.text,
                 bSide = bSide.text,
                 cSide = cSide.text,
+                angle = angle.text,
                 shapeChoice = shapeSelector.value
             )
         )

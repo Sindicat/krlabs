@@ -31,7 +31,9 @@ class MasterViewController {
         return when (inputViewData.shapeChoice) {
             ShapeChoice.RHOMBUS -> Rhombus(
                 diagonalA = inputViewData.length.toDoubleOrNull(),
-                diagonalB = inputViewData.height.toDoubleOrNull()
+                diagonalB = inputViewData.height.toDoubleOrNull(),
+                side = inputViewData.aSide.toDoubleOrNull(),
+                angle = inputViewData.angle.toDoubleOrNull()
             )
             ShapeChoice.RECTANGLE -> Rectangle(
                 length = inputViewData.length.toDoubleOrNull(),
@@ -42,7 +44,8 @@ class MasterViewController {
                 b = inputViewData.bSide.toDoubleOrNull(),
                 c = inputViewData.cSide.toDoubleOrNull(),
                 base = inputViewData.length.toDoubleOrNull(),
-                height = inputViewData.height.toDoubleOrNull()
+                height = inputViewData.height.toDoubleOrNull(),
+                angle = inputViewData.angle.toDoubleOrNull()
             )
         }
     }

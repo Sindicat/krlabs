@@ -8,6 +8,7 @@ data class InputViewData(
     var aSide: String,
     var bSide: String,
     var cSide: String,
+    var angle: String,
     var shapeChoice: ShapeChoice
 )
 

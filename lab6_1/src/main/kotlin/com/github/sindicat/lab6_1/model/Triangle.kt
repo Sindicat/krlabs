@@ -1,17 +1,22 @@
 package com.github.sindicat.lab6_1.model
 
 import kotlin.math.pow
+import kotlin.math.sin
 
 class Triangle(
     val a: Double?,
     val b: Double?,
     val c: Double?,
     val base: Double?,
-    val height: Double?
+    val height: Double?,
+    val angle: Double?
 ) : Shape {
 
     override fun getArea(): Double? {
-        return if (areSidesSet()) {
+        return if (a != null && b != null && angle != null) {
+            0.5 * a * b  * sin(angle)
+
+        } else if (areSidesSet()) {
             (1.0 / 4) * ((a!! + b!! + c!!) * (b + c - a) * (a + c - b) * (a + b - c)).pow(0.5)
 
         } else if (base != null && height != null) {
