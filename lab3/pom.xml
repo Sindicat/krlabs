@@ -16,7 +16,7 @@
         <kotlin.code.style>official</kotlin.code.style>
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <mvn.version>3.1.0</mvn.version>
-        <netty.version>4.1.48.Final</netty.version>
+        <netty.version>4.1.68.Final</netty.version>
     </properties>
 
     <dependencies>
